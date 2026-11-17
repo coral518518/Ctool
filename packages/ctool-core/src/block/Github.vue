@@ -2,7 +2,7 @@
     <div class="ctool-github inline-flex items-center rounded-md border border-border/80 bg-muted/30 text-xs font-medium transition-colors shadow-2xs select-none">
         <span
             class="ctool-github-name px-2 py-0.5 flex items-center gap-1.5 cursor-pointer text-foreground hover:text-primary transition-colors"
-            @click="openUrl('https://web.coral.cc.cd/')"
+            @click="openUrl('https://ctool.coral.cc.cd/')"
         >
             <Icon name="github" :size="12" />
             <strong class="font-bold tracking-tight">Ctool</strong>

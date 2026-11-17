@@ -90,7 +90,7 @@ const iconSize = computed(() => {
 const variantClasses = computed(() => {
     switch (props.type) {
         case "primary":
-            return "bg-primary text-primary-foreground font-semibold shadow-sm hover:brightness-105 active:scale-[0.98]";
+            return "bg-primary text-white font-semibold shadow-sm hover:brightness-105 active:scale-[0.98]";
         case "dotted":
             return "border border-dashed border-border/80 bg-card/60 text-foreground hover:border-primary/60 hover:text-primary hover:bg-accent/40 active:scale-[0.98]";
         case "danger":

@@ -65,7 +65,7 @@
     --popover-foreground: 210 20% 98%;
 
     --primary: 166 72% 43%;
-    --primary-foreground: 224 25% 9%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 220 20% 16%;
     --secondary-foreground: 210 20% 98%;
@@ -135,9 +135,6 @@
     --ctool-info-color: #94a3b8;
     --ctool-disabled-text-color: var(--ctool-placeholder-text-color);
 
-    --primary: var(--ctool-primary);
-    --primary-hover: var(--ctool-primary-hover);
-    --primary-focus: var(--ctool-primary-focus);
     --color: var(--ctool-color-primary);
     --background-color: var(--ctool-background-color);
 

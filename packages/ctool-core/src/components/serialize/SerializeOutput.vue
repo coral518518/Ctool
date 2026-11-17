@@ -161,7 +161,11 @@ watch(() => {
 
         if (r !== "") {
             success()
-            result = await formatter.simple(current.type, 'beautify', r)
+            try {
+                result = await formatter.simple(current.type, 'beautify', r)
+            } catch {
+                result = r
+            }
         }
     } catch (e) {
         console.error(e)

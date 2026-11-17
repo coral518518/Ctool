@@ -74,6 +74,18 @@ function fixObjectArray(o) {
     return a.join("\n");
 }
 
+const ensurePrototype = (val: any): any => {
+    if (val !== null && typeof val === "object") {
+        if (Object.getPrototypeOf(val) === null) {
+            Object.setPrototypeOf(val, Object.prototype);
+        }
+        for (const k of Object.keys(val)) {
+            ensurePrototype(val[k]);
+        }
+    }
+    return val;
+};
+
 const stringify = (data: any, {attribute_prefix = ""}: Record<string, any> = {}) => {
     if (!isPlainObject(data) && !isArray(data)) {
         return ""
@@ -90,8 +102,16 @@ const stringify = (data: any, {attribute_prefix = ""}: Record<string, any> = {})
     if (isArray(data)) {
         data = {root: {row: data}}
     }
-    attribute_prefix = attribute_prefix === "" ? "@attribute_" : attribute_prefix
-    return (new x2js({attributePrefix: attribute_prefix})).json2xml_str(Json.parse(fixObjectArray(data))) as string;
+    attribute_prefix = typeof attribute_prefix === "string" && attribute_prefix !== "" ? attribute_prefix : "@attribute_"
+    
+    try {
+        const fixed = fixObjectArray(data);
+        const parsed = ensurePrototype(Json.parse(fixed));
+        return (new x2js({attributePrefix: attribute_prefix})).json2xml_str(parsed) as string;
+    } catch {
+        ensurePrototype(data);
+        return (new x2js({attributePrefix: attribute_prefix})).json2xml_str(data) as string;
+    }
 }
 export default {
     parse,

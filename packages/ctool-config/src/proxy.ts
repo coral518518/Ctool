@@ -26,7 +26,7 @@ const isPrivateHost = (hostname: string): boolean => {
 };
 
 export default {
-    defaultProxyUrl: "https://web.coral.cc.cd/api/proxy",
+    defaultProxyUrl: "https://ctool.coral.cc.cd/api/proxy",
     is(urlString: string) {
         if (!urlString) {
             return false;
