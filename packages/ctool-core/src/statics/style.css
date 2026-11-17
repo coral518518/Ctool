@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  [data-theme="light"] {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    /* Ctool Iconic Mint/Emerald */
+    --primary: 166 72% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 20% 95%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 20% 90%;
+    --input: 214.3 20% 90%;
+    --ring: 166 72% 40%;
+    --radius: 0.5rem;
+
+    /* Ctool legacy variable mapping */
+    --ctool-color-primary-theme: #1e293b;
+    --ctool-color-secondary-theme: #64748b;
+    --ctool-border-color-theme: #e2e8f0;
+    --ctool-placeholder-text-color-theme: #94a3b8;
+    --ctool-mask-color: rgba(255, 255, 255, 0.88);
+
+    --ctool-background-color: #ffffff;
+    --ctool-block-title-bg-color: #f8fafc;
+    --ctool-block-content-bg-color: #ffffff;
+
+    --ctool-dropdown-background-color: #ffffff;
+    --ctool-dropdown-hover-background-color: #f1f5f9;
+
+    --ctool-form-element-background-color: #ffffff;
+    --ctool-form-element-active-background-color: #ffffff;
+  }
+
+  .dark,
+  [data-theme="dark"] {
+    --background: 224 25% 9%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 24% 11%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 24% 11%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 166 72% 43%;
+    --primary-foreground: 224 25% 9%;
+
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 220 20% 17%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 18% 18%;
+    --input: 220 18% 18%;
+    --ring: 166 72% 43%;
+
+    /* Ctool legacy variable mapping */
+    --ctool-color-primary-theme: #f1f5f9;
+    --ctool-color-secondary-theme: #94a3b8;
+    --ctool-border-color-theme: #272d37;
+    --ctool-placeholder-text-color-theme: #64748b;
+    --ctool-mask-color: rgba(15, 18, 24, 0.88);
+
+    --ctool-background-color: #11141a;
+    --ctool-block-title-bg-color: #161a22;
+    --ctool-block-content-bg-color: #11141a;
+
+    --ctool-dropdown-background-color: #161a22;
+    --ctool-dropdown-hover-background-color: #212631;
+
+    --ctool-form-element-background-color: #161a22;
+    --ctool-form-element-active-background-color: #1c212b;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+#root, :root, html {
+    --ctool-primary: #17a98c;
+    --ctool-primary-hover: #20c997;
+    --ctool-primary-focus: rgba(23, 169, 140, 0.15);
+
+    --ctool-contrast: #ef4444;
+    --ctool-contrast-hover: #f87171;
+    --ctool-contrast-focus: rgba(239, 68, 68, 0.15);
+
+    --ctool-color-primary: var(--ctool-color-primary-theme);
+    --ctool-color-secondary: var(--ctool-color-secondary-theme);
+
+    --ctool-form-item-height: 2rem;
+    --ctool-form-font-size: 0.875rem;
+
+    --ctool-border-color: var(--ctool-border-color-theme);
+    --ctool-placeholder-text-color: var(--ctool-placeholder-text-color-theme);
+
+    --ctool-info-color: #94a3b8;
+    --ctool-disabled-text-color: var(--ctool-placeholder-text-color);
+
+    --primary: var(--ctool-primary);
+    --primary-hover: var(--ctool-primary-hover);
+    --primary-focus: var(--ctool-primary-focus);
+    --color: var(--ctool-color-primary);
+    --background-color: var(--ctool-background-color);
+
+    --border-radius: 0.5rem;
+    --border-width: 1px;
+    --form-element-border-color: var(--ctool-border-color);
+    --form-element-background-color: var(--ctool-form-element-background-color);
+    --form-element-active-background-color: var(--ctool-form-element-active-background-color);
+    --form-element-placeholder-color: var(--ctool-placeholder-text-color);
+    --dropdown-background-color: var(--ctool-dropdown-background-color);
+    --dropdown-hover-background-color: var(--ctool-dropdown-hover-background-color);
+    --dropdown-border-color: var(--ctool-border-color);
+    --dropdown-color: var(--ctool-color-primary);
+
+    color: var(--color);
+    background-color: var(--background-color);
+}
+
+#root [data-size="small"] {
+    --ctool-form-item-height: 1.625rem;
+    --ctool-form-font-size: 0.75rem;
+}
+
+#root [data-size="large"] {
+    --ctool-form-item-height: 2.5rem;
+    --ctool-form-font-size: 1rem;
+}
+
+#root [data-disabled="y"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+input, select, textarea {
+    font-size: 0.875rem;
+    color: inherit;
+}
+
+.ctool-input-label {
+    font-weight: 500;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.45);
+}
+
+/* Tippy.js shadcn-vue theme customization */
+.tippy-box {
+  background-color: hsl(var(--popover)) !important;
+  color: hsl(var(--popover-foreground)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: var(--radius) !important;
+  font-size: 0.75rem !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+}
+.tippy-box > .tippy-backdrop {
+  background-color: hsl(var(--popover)) !important;
+}
+.tippy-box[data-theme~='dark'],
+.tippy-box[data-theme~='light'] {
+  background-color: hsl(var(--popover)) !important;
+  color: hsl(var(--popover-foreground)) !important;
+}
+.tippy-arrow {
+  color: hsl(var(--popover)) !important;
+}
+

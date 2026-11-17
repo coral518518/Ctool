@@ -1,0 +1,28 @@
+{
+    "name": "ctool",
+    "version": "3.1.0",
+    "type": "module",
+    "description": "开发者工具",
+    "homepage": "https://ctool",
+    "author": "coral",
+    "license": "MIT",
+    "scripts": {
+        "initialize": "pnpm --filter ctool-config run build && pnpm --filter ctool-adapter-base run build && pnpm -r run adapter-build",
+        "check": "pnpm run initialize && pnpm --filter ctool-core run check",
+        "dev": "pnpm run initialize && pnpm --filter ctool-core run dev",
+        "build": "pnpm run initialize && pnpm --filter ctool-core run build",
+        "release": "node release.cjs && pnpm run build && pnpm -r run platform-release",
+        "only-release": "node release.cjs && pnpm -r run platform-release",
+        "vercel-build": "pnpm run build && pnpm --filter ctool-site run build",
+        "deploy:workers": "pnpm run build && wrangler deploy",
+        "preview:workers": "pnpm run build && wrangler dev",
+        "clear": "node clear.cjs"
+    },
+    "devDependencies": {
+        "@types/node": "catalog:",
+        "typescript": "catalog:"
+    },
+    "dependencies": {
+        "ctool-config": "workspace:*"
+    }
+}
